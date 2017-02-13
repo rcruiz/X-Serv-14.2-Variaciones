@@ -30,7 +30,7 @@ while True:
     (recvSocket, address) = mySocket.accept()
     print('HTTP request received:')
     print(recvSocket.recv(1024))
-    recvSocket.send(bytes("HTTP/1.1 200 OK\r\n\r\n" +
-                    "<html><body><h1>Hello World!</h1></body></html>" +
+    recvSocket.send(bytes("HTTP/1.1 404 Not Found\r\n\r\n" +
+                    "<html><body><p>Recurso no encontrado</p></body></html>" +
                     "\r\n", 'utf-8'))
     recvSocket.close()

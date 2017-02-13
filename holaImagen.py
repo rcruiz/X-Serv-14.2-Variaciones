@@ -31,6 +31,7 @@ while True:
     print('HTTP request received:')
     print(recvSocket.recv(1024))
     recvSocket.send(bytes("HTTP/1.1 200 OK\r\n\r\n" +
-                    "<html><body><h1>Hello World!</h1></body></html>" +
-                    "\r\n", 'utf-8'))
+                    "<html><body><h1>Hello World!</h1><img src=" +
+                    'http://www.desmotivar.com/img/desmotivaciones/176819_el-navegador-no-responde.jpg' +
+                    " </img></body></html>" + "\r\n", 'utf-8'))
     recvSocket.close()

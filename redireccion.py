@@ -30,7 +30,9 @@ while True:
     (recvSocket, address) = mySocket.accept()
     print('HTTP request received:')
     print(recvSocket.recv(1024))
-    recvSocket.send(bytes("HTTP/1.1 200 OK\r\n\r\n" +
-                    "<html><body><h1>Hello World!</h1></body></html>" +
+    recvSocket.send(bytes("HTTP/1.1 303 See Others\r\n\r\n" +
+                    "<html><head>" + '<meta http-equiv="Refresh" content="3;url=' +
+                    'http://gsyc.es/' + '">' + "</head>" +
+                    "<body><p>Redirigido a GSYC: " + "</p></body></html>" +
                     "\r\n", 'utf-8'))
     recvSocket.close()
